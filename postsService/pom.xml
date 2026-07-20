@@ -11,7 +11,7 @@
 	<groupId>com.project.linkedin</groupId>
 	<artifactId>postsService</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name/>
+	<name>posts-service</name>
 	<description/>
 	<url/>
 	<licenses>
@@ -146,6 +146,26 @@
 								</path>
 							</annotationProcessorPaths>
 						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<configuration>
+					<to>
+						<image>docker.io/bhanu8505/networking-application-${project.name}:${project.version}</image>
+						<tags>
+							<tag>latest</tag>
+						</tags>
+					</to>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
