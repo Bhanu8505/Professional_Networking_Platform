@@ -1,4 +1,4 @@
-# LinkedIn Backend - Spring Boot Microservices
+# Professional Networking Platform Backend - Spring Boot Microservices
 
 A LinkedIn-inspired backend built with Spring Boot and Java 21. The project uses independently deployable services behind an API Gateway, service discovery through Eureka, synchronous calls through OpenFeign, and Kafka events for cross-service workflows.
 
