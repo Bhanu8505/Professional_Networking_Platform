@@ -6,8 +6,10 @@ import com.project.linkedin.postsService.dto.PostDto;
 import com.project.linkedin.postsService.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -18,10 +20,10 @@ public class PostController {
 
     private final PostService postService;
 
-    @PostMapping
-    public ResponseEntity<PostDto> createPost(@RequestBody PostCreateRequestDto postCreateRequestDto){
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<PostDto> createPost(@RequestPart("post") PostCreateRequestDto postCreateRequestDto, @RequestPart ("multipartFile") MultipartFile multipartFile){
 
-        PostDto postDto = postService.createPost(postCreateRequestDto);
+        PostDto postDto = postService.createPost(postCreateRequestDto, multipartFile);
 
         return new ResponseEntity<>(postDto , HttpStatus.CREATED);
 
