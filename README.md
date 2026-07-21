@@ -12,8 +12,8 @@ API Gateway (JWT validation and routing)
   |-------------------|-----------------------|
   v                   v                       v
 User Service      Posts Service       Connections Service
-  |                   |                       |
-  |                   |----> Uploader Service  |
+  |                   |                         |
+  |                   |----> Uploader Service   |
   |                   |       (Cloudinary)      |
   |                   v                         |
   |                Kafka events <---------------|
